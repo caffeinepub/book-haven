@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Second-hand bookstore website named 'Kitabi Keeda' with deeper Pistachio Mist background, leafy design theme, user authentication, book preferences, sample book catalog, voice/image search, and sell-your-book feature",
+  "architectural_notes": [
+    "Website for second-hand bookstore business",
+    "Book data (images, prices) to be provided later",
+    "Background color: Pistachio Mist",
+    "Website name: Kitabi Keeda",
+    "Sample book catalog with 5-6 books (₹100-200 price range)",
+    "Book preference/genre filtering system",
+    "Voice search capability",
+    "Image/camera upload for book scanning",
+    "Sell-your-book submission feature",
+    "Business location: Kolkata, India"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "imageRequirements": "## Required Images\n- Camera or lens icon for book image upload feature (camera-icon.dim_64x64.png)\n- Microphone icon for voice search functionality (microphone-icon.dim_64x64.png)\n- Menu hamburger icon with botanical styling for top-left navigation (menu-icon.dim_48x48.png)\n- Placeholder book cover image with 'Image to be uploaded' text (book-placeholder.dim_300x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-user-authentication-system-with-login-and-signup-functionality-using-internet-identity",
+      "title": "Implement user authentication system with login and signup functionality using Internet Identity",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-search-bar-component-that-allows-users-to-search-for-books",
+      "title": "Create a search bar component that allows users to search for books",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-book-catalog-section-that-displays-books-with-their-images-and-prices",
+      "title": "Build a book catalog section that displays books with their images and prices",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-the-website-with-a-light-color-scheme-and-leafy-design-theme-creating-a-natural-warm-aesthetic-with-botanical-elements-and-soft-tones",
+      "title": "Design the website with a light color scheme and leafy design theme, creating a natural, warm aesthetic with botanical elements and soft tones",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-standard-website-features-including-navigation-footer-and-responsive-layout",
+      "title": "Implement standard website features including navigation, footer, and responsive layout",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-website-name-from-book-haven-to-kitabi-keeda-in-all-frontend-components-including-navigation-header-footer-html-title-and-any-branding-elements",
+      "title": "Update the website name from 'Book Haven' to 'Kitabi Keeda' in all frontend components including Navigation header, Footer, HTML title, and any branding elements",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-change-the-website-background-color-to-pistachio-mist-throughout-the-application-updating-the-color-palette-in-tailwind-configuration-and-css-variables",
+      "title": "Change the website background color to Pistachio Mist throughout the application, updating the color palette in Tailwind configuration and CSS variables",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-leafy-design-theme-with-additional-botanical-elements-and-decorative-leaf-patterns-across-the-website-layout-including-headers-sections-and-backgrounds",
+      "title": "Enhance the leafy design theme with additional botanical elements and decorative leaf patterns across the website layout, including headers, sections, and backgrounds",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-visual-prominence-of-the-login-signup-button-by-making-its-background-color-deeper-and-more-contrasting-against-the-pistachio-mist-theme-to-ensure-it-is-clearly-visible-in-the-navigation",
+      "title": "Increase the visual prominence of the login/signup button by making its background color deeper and more contrasting against the Pistachio Mist theme to ensure it is clearly visible in the navigation",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-book-preferences-section-positioned-below-the-search-bar-where-users-can-select-their-preferred-book-genres-through-a-multi-select-or-filter-interface",
+      "title": "Create a book preferences section positioned below the search bar where users can select their preferred book genres through a multi-select or filter interface",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-5-6-sample-books-on-the-front-page-with-placeholder-images-labeled-image-to-be-uploaded-or-showing-blank-placeholders-and-prices-ranging-from-100-to-200",
+      "title": "Display 5-6 sample books on the front page with placeholder images (labeled 'Image to be uploaded' or showing blank placeholders) and prices ranging from ₹100 to ₹200",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-sell-your-book-feature-accessible-from-the-homepage-where-customers-can-submit-details-about-books-they-want-to-sell-to-kitabi-keeda-for-resale",
+      "title": "Add a 'Sell Your Book' feature accessible from the homepage where customers can submit details about books they want to sell to Kitabi Keeda for resale",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-menu-section-in-the-top-left-corner-of-the-navigation-with-dropdown-or-sidebar-options-including-settings-personalization-and-other-utility-menu-items",
+      "title": "Create a menu section in the top-left corner of the navigation with dropdown or sidebar options including Settings, Personalization, and other utility menu items",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-camera-lens-icon-button-that-allows-customers-to-upload-or-capture-images-of-books-they-want-to-search-for-or-sell-enabling-image-based-book-identification",
+      "title": "Add a camera/lens icon button that allows customers to upload or capture images of books they want to search for or sell, enabling image-based book identification",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-voice-search-functionality-with-a-microphone-icon-that-allows-users-to-search-for-books-using-voice-input",
+      "title": "Implement voice search functionality with a microphone icon that allows users to search for books using voice input",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-business-address-throughout-the-website-to-reflect-kolkata-india-as-the-location-particularly-in-the-footer-and-contact-sections",
+      "title": "Update the business address throughout the website to reflect Kolkata, India as the location, particularly in the footer and contact sections",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User authentication system with login and signup",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Search bar functionality for finding books",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Book display section with images and prices",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Make login/signup buttons more visible with deeper background color",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add book preference selection section below search bar for genre filtering",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Display 5-6 sample books on front page with placeholder images and prices (₹100-200 range)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add 'Sell Your Book' feature where customers can submit books to sell",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add top-left menu section with Settings, Personalization, etc.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add camera/image upload feature for customers to scan/photograph books",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add voice search functionality with microphone icon",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Set business address to Kolkata, India in footer/contact section",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Book Haven",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

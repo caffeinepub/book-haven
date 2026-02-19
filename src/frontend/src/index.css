@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Light botanical color palette with Pistachio Mist */
+        --background: 0.95 0.03 135;
+        --foreground: 0.25 0.02 140;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 140;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 140;
+        
+        /* Primary: Leaf Green */
+        --primary: 0.55 0.12 145;
+        --primary-foreground: 0.98 0.01 85;
+        
+        /* Secondary: Soft Beige */
+        --secondary: 0.94 0.02 75;
+        --secondary-foreground: 0.25 0.02 140;
+        
+        /* Muted: Sage */
+        --muted: 0.88 0.02 130;
+        --muted-foreground: 0.50 0.03 140;
+        
+        /* Accent: Sage Light */
+        --accent: 0.92 0.02 130;
+        --accent-foreground: 0.25 0.02 140;
+        
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        
+        /* Borders */
+        --border: 0.90 0.02 130;
+        --input: 0.90 0.02 130;
+        --ring: 0.55 0.12 145;
+        
+        /* Custom botanical colors - deeper forest green for better visibility */
+        --leaf-green: 0.55 0.12 145;
+        --forest-green: 0.30 0.10 150;
+        --sage: 0.50 0.03 140;
+        --sage-light: 0.92 0.02 130;
+        --cream: 0.98 0.01 85;
+        --soft-beige: 0.94 0.02 75;
+        --pistachio-mist: 0.95 0.03 135;
+        
+        --chart-1: 0.55 0.12 145;
+        --chart-2: 0.70 0.10 120;
+        --chart-3: 0.85 0.08 95;
+        --chart-4: 0.60 0.15 160;
+        --chart-5: 0.45 0.10 135;
+    }
+
+    .dark {
+        --background: 0.20 0.02 140;
+        --foreground: 0.95 0.01 85;
+        --card: 0.25 0.02 140;
+        --card-foreground: 0.95 0.01 85;
+        --popover: 0.25 0.02 140;
+        --popover-foreground: 0.95 0.01 85;
+        
+        --primary: 0.65 0.12 145;
+        --primary-foreground: 0.20 0.02 140;
+        
+        --secondary: 0.30 0.02 140;
+        --secondary-foreground: 0.95 0.01 85;
+        
+        --muted: 0.35 0.02 140;
+        --muted-foreground: 0.70 0.03 130;
+        
+        --accent: 0.40 0.03 145;
+        --accent-foreground: 0.95 0.01 85;
+        
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.95 0.01 85;
+        
+        --border: 0.35 0.02 140;
+        --input: 0.35 0.02 140;
+        --ring: 0.65 0.12 145;
+        
+        --leaf-green: 0.65 0.12 145;
+        --forest-green: 0.55 0.10 150;
+        --sage: 0.70 0.03 130;
+        --sage-light: 0.35 0.02 140;
+        --cream: 0.25 0.02 140;
+        --soft-beige: 0.30 0.02 140;
+        --pistachio-mist: 0.30 0.03 140;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-pistachio-mist text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@layer utilities {
+    .text-leaf-green {
+        color: oklch(var(--leaf-green));
+    }
+    
+    .text-forest-green {
+        color: oklch(var(--forest-green));
+    }
+    
+    .text-sage {
+        color: oklch(var(--sage));
+    }
+    
+    .bg-leaf-green {
+        background-color: oklch(var(--leaf-green));
+    }
+    
+    .bg-forest-green {
+        background-color: oklch(var(--forest-green));
+    }
+    
+    .bg-sage {
+        background-color: oklch(var(--sage));
+    }
+    
+    .bg-sage-light {
+        background-color: oklch(var(--sage-light));
+    }
+    
+    .bg-cream {
+        background-color: oklch(var(--cream));
+    }
+    
+    .bg-soft-beige {
+        background-color: oklch(var(--soft-beige));
+    }
+    
+    .bg-pistachio-mist {
+        background-color: oklch(var(--pistachio-mist));
+    }
+    
+    .border-leaf-green {
+        border-color: oklch(var(--leaf-green));
+    }
+    
+    .border-forest-green {
+        border-color: oklch(var(--forest-green));
+    }
+    
+    .border-sage {
+        border-color: oklch(var(--sage));
+    }
+    
+    .border-sage-light {
+        border-color: oklch(var(--sage-light));
+    }
+}

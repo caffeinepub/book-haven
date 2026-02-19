@@ -1,0 +1,184 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-increase-the-visual-prominence-of-the-login-signup-button-by-making-its-background-color-deeper-and-more-contrasting-against-the-pistachio-mist-theme-to-ensure-it-is-clearly-visible-in-the-navigation",
+      "featureTitle": "Increase the visual prominence of the login/signup button by making its background color deeper and more contrasting against the Pistachio Mist theme to ensure it is clearly visible in the navigation",
+      "files": [
+        "frontend/src/components/LoginButton.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-book-preferences-section-positioned-below-the-search-bar-where-users-can-select-their-preferred-book-genres-through-a-multi-select-or-filter-interface",
+      "featureTitle": "Create a book preferences section positioned below the search bar where users can select their preferred book genres through a multi-select or filter interface",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BookPreferences.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-5-6-sample-books-on-the-front-page-with-placeholder-images-labeled-image-to-be-uploaded-or-showing-blank-placeholders-and-prices-ranging-from-100-to-200",
+      "featureTitle": "Display 5-6 sample books on the front page with placeholder images (labeled 'Image to be uploaded' or showing blank placeholders) and prices ranging from ₹100 to ₹200",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SampleBooks.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-sell-your-book-feature-accessible-from-the-homepage-where-customers-can-submit-details-about-books-they-want-to-sell-to-kitabi-keeda-for-resale",
+      "featureTitle": "Add a 'Sell Your Book' feature accessible from the homepage where customers can submit details about books they want to sell to Kitabi Keeda for resale",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SellBookForm.tsx",
+        "frontend/src/components/SellBookModal.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-menu-section-in-the-top-left-corner-of-the-navigation-with-dropdown-or-sidebar-options-including-settings-personalization-and-other-utility-menu-items",
+      "featureTitle": "Create a menu section in the top-left corner of the navigation with dropdown or sidebar options including Settings, Personalization, and other utility menu items",
+      "files": [
+        "frontend/src/components/MenuDropdown.tsx",
+        "frontend/src/components/Navigation.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-camera-lens-icon-button-that-allows-customers-to-upload-or-capture-images-of-books-they-want-to-search-for-or-sell-enabling-image-based-book-identification",
+      "featureTitle": "Add a camera/lens icon button that allows customers to upload or capture images of books they want to search for or sell, enabling image-based book identification",
+      "files": [
+        "frontend/src/components/CameraCapture.tsx",
+        "frontend/src/components/SellBookForm.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-voice-search-functionality-with-a-microphone-icon-that-allows-users-to-search-for-books-using-voice-input",
+      "featureTitle": "Implement voice search functionality with a microphone icon that allows users to search for books using voice input",
+      "files": [
+        "frontend/src/components/SearchBar.tsx",
+        "frontend/src/components/VoiceSearchButton.tsx",
+        "frontend/src/hooks/useVoiceSearch.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-business-address-throughout-the-website-to-reflect-kolkata-india-as-the-location-particularly-in-the-footer-and-contact-sections",
+      "featureTitle": "Update the business address throughout the website to reflect Kolkata, India as the location, particularly in the footer and contact sections",
+      "files": [
+        "frontend/src/components/Footer.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "camera@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

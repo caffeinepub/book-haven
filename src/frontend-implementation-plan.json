@@ -1,0 +1,196 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Enhance authentication visibility, add book preferences, sample catalog, sell feature, menu system, and search capabilities",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Make login/signup button more prominent with deeper, contrasting background color",
+      "acceptanceCriteria": [
+        "Login/signup button has a deeper, more saturated background color",
+        "Button remains visible and clearly distinguishable from the Pistachio Mist background",
+        "Button maintains botanical theme consistency"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "modify",
+          "description": "Update the login button styling to use a deeper, more saturated color that contrasts well with the Pistachio Mist theme. Replace the current bg-blue-600/hover:bg-blue-700 classes with a darker botanical color (e.g., using leaf-green-700 or sage-800 from the theme palette) to ensure high visibility while maintaining the botanical aesthetic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Create book preferences section below search bar for genre selection",
+      "acceptanceCriteria": [
+        "Section appears directly below the search bar component",
+        "Users can select multiple genres from available options",
+        "Genre preferences are stored in user profile",
+        "UI follows botanical theme design"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookPreferences.tsx",
+          "operation": "create",
+          "description": "Create a new component that displays a multi-select genre preference interface. Include genre options (Fiction, Non-Fiction, Mystery, Romance, Science Fiction, Fantasy, Biography, History, Self-Help, Children's Books). Use the authorization component to verify the user is logged in before allowing preference changes. Call the backend's saveCallerBookPreferences method when genres are selected. Style with botanical theme colors and include decorative leaf elements. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks for managing book preferences: useGetCallerBookPreferences to fetch current preferences, and useSaveCallerBookPreferences mutation to save selected genres. Follow the existing pattern used for user profile queries. Include proper error handling and cache invalidation."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and place the BookPreferences component directly below the SearchBar component in the hero section. Ensure it only displays when the user is authenticated. Position it with appropriate spacing to maintain the visual hierarchy."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Display 5-6 sample books with placeholder images and prices between ₹100-₹200",
+      "acceptanceCriteria": [
+        "5-6 books are visible on the homepage",
+        "Book cards show placeholder images with 'Image to be uploaded' text or blank placeholder graphics",
+        "All sample books have prices between ₹100 and ₹200",
+        "Books display in the existing BookCatalog grid layout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SampleBooks.tsx",
+          "operation": "create",
+          "description": "Create a component that fetches and displays sample books from the backend's getSampleBooks method. Use the generated placeholder image at frontend/public/assets/generated/book-placeholder.dim_300x400.png for book covers. Display 5-6 books in a grid layout matching the BookCatalog styling. Each book card should show the placeholder image, title, author, and price formatted in Indian Rupees (₹100-₹200 range). Include loading and error states."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a useGetSampleBooks React Query hook that calls actor.getSampleBooks() to fetch the sample book data. Include proper error handling and loading states following the existing query pattern."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and display the SampleBooks component in the homepage layout, positioned above or integrated with the existing BookCatalog. Add a section heading like 'Featured Books' or 'Sample Collection' with botanical styling to introduce the sample books section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Add 'Sell Your Book' feature for customers to submit books for resale",
+      "acceptanceCriteria": [
+        "Visible 'Sell Your Book' button or section on the homepage",
+        "Form or modal allows customers to submit book details (title, author, condition, etc.)",
+        "Submissions are stored in the backend",
+        "Confirmation message shown after successful submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SellBookForm.tsx",
+          "operation": "create",
+          "description": "Create a form component that allows users to submit books they want to sell. Include fields for title, author, price, and optional book cover image upload using the blob-storage component. Use the camera component with the generated camera icon at frontend/public/assets/generated/camera-icon.dim_64x64.png to allow users to capture book cover photos. Call the backend's submitSellRequest method on form submission. Include validation, loading states, and success/error messages. Style with botanical theme colors. Verify the blob-storage and camera component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/SellBookModal.tsx",
+          "operation": "create",
+          "description": "Create a modal wrapper component that contains the SellBookForm. Include open/close state management, backdrop overlay, and smooth animations. Ensure the modal is accessible and follows the botanical theme styling with leaf decorative elements."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a useSubmitSellRequest mutation hook that calls actor.submitSellRequest with title, author, price, and coverImage parameters. Handle the ExternalBlob image upload with progress tracking. Include success/error states and cache invalidation."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a prominent 'Sell Your Book' button in the hero section or near the search bar. Wire it to open the SellBookModal when clicked. Include the modal state management and ensure it's positioned prominently for easy discovery by customers."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Create menu section in top-left corner with Settings and Personalization options",
+      "acceptanceCriteria": [
+        "Menu icon or button appears in the top-left corner of the navigation",
+        "Menu opens to reveal Settings and Personalization options",
+        "Menu items are clickable and navigate to respective sections",
+        "Menu design follows botanical theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/MenuDropdown.tsx",
+          "operation": "create",
+          "description": "Create a dropdown menu component that displays Settings and Personalization options. Use the generated menu icon at frontend/public/assets/generated/menu-icon.dim_48x48.png for the menu button. Include smooth open/close animations and ensure the dropdown is properly positioned relative to the menu button. Style with botanical colors and include subtle leaf decorations. Menu items should include Settings, Personalization, and other utility options."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Import and place the MenuDropdown component in the top-left corner of the navigation bar, before the logo or as the first element. Adjust the layout to accommodate the new menu while maintaining responsive behavior on mobile devices."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Add camera icon for image-based book search and sell submissions",
+      "acceptanceCriteria": [
+        "Camera/lens icon is visible in the search or upload area",
+        "Clicking the icon opens camera access or file upload dialog",
+        "Users can capture or upload book images",
+        "Uploaded images are processed and associated with search or sell actions"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CameraCapture.tsx",
+          "operation": "create",
+          "description": "Create a reusable camera capture component using the camera component hook. Display the camera icon at frontend/public/assets/generated/camera-icon.dim_64x64.png as a button. When clicked, activate the camera preview with live video feed and a capture button. Allow users to take a photo or select from file upload. Return the captured image as an ExternalBlob for use in book search or sell submissions. Include proper error handling for camera permissions. Style with botanical theme. Verify the camera component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/SellBookForm.tsx",
+          "operation": "modify",
+          "description": "Integrate the CameraCapture component into the book cover image upload field. Allow users to either upload a file or use the camera to capture a book cover photo. Display the captured image preview before submission."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Implement voice search functionality with microphone icon",
+      "acceptanceCriteria": [
+        "Microphone icon appears in or near the search bar",
+        "Clicking the icon activates voice input",
+        "Voice input is converted to text and populates the search field",
+        "Search executes automatically or on user confirmation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useVoiceSearch.ts",
+          "operation": "create",
+          "description": "Create a React hook that uses the browser's Web Speech API (SpeechRecognition) to capture voice input. Include state management for listening status, transcript text, and error handling. Support starting/stopping voice recognition and handle browser compatibility checks. Return the recognized text to populate the search field."
+        },
+        {
+          "path": "frontend/src/components/VoiceSearchButton.tsx",
+          "operation": "create",
+          "description": "Create a button component that displays the microphone icon at frontend/public/assets/generated/microphone-icon.dim_64x64.png. Use the useVoiceSearch hook to manage voice input. Show visual feedback when listening (e.g., pulsing animation). Display the transcript as it's being recognized. Handle browser compatibility and permission errors gracefully. Style with botanical theme colors."
+        },
+        {
+          "path": "frontend/src/components/SearchBar.tsx",
+          "operation": "modify",
+          "description": "Integrate the VoiceSearchButton component into the search bar layout, positioned to the right of the text input field. Wire the voice search result to populate the search input value. Ensure the voice input triggers the search functionality either automatically or on user confirmation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Update business address to Kolkata, India throughout the website",
+      "acceptanceCriteria": [
+        "Footer displays Kolkata, India as the business address",
+        "Contact section (if present) shows Kolkata, India location",
+        "Address format is clear and properly formatted"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Update the contact information section in the footer to display the business address as Kolkata, India. Format the address clearly with proper line breaks and styling. Ensure the address is prominently displayed alongside other contact details like email and phone."
+        }
+      ]
+    }
+  ]
+}
