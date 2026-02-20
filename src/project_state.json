@@ -1,22 +1,25 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
-  "summary": "Second-hand bookstore website named 'Kitabi Keeda' with deeper Pistachio Mist background, leafy design theme, user authentication, book preferences, sample book catalog, voice/image search, and sell-your-book feature",
+  "projectStateVersion": 21,
+  "summary": "Second-hand bookstore website named 'Kitabi Keeda' with Caramel and Cashmere background, leafy design theme, user authentication, book preferences, sample book catalog, voice/image search, and sell-your-book feature",
   "architectural_notes": [
     "Website for second-hand bookstore business",
     "Book data (images, prices) to be provided later",
-    "Background color: Pistachio Mist",
     "Website name: Kitabi Keeda",
-    "Sample book catalog with 5-6 books (₹100-200 price range)",
-    "Book preference/genre filtering system",
     "Voice search capability",
     "Image/camera upload for book scanning",
     "Sell-your-book submission feature",
-    "Business location: Kolkata, India"
+    "Business location: Kolkata, India",
+    "Background color: Caramel and Cashmere (replacing Pistachio Mist)",
+    "Books organized by genre with 4 books per genre",
+    "Book prices must be in multiples of 10 (₹110, ₹120, etc.), not irregular values like ₹111 or ₹134"
   ],
-  "known_issues": [],
+  "known_issues": [
+    "Background color (Caramel and Cashmere) not visible/dark enough",
+    "Login/signup buttons too light, blending with background",
+    "Books not displaying on the webpage despite backend catalog being populated"
+  ],
   "isFixRequest": true,
-  "imageRequirements": "## Required Images\n- Camera or lens icon for book image upload feature (camera-icon.dim_64x64.png)\n- Microphone icon for voice search functionality (microphone-icon.dim_64x64.png)\n- Menu hamburger icon with botanical styling for top-left navigation (menu-icon.dim_48x48.png)\n- Placeholder book cover image with 'Image to be uploaded' text (book-placeholder.dim_300x400.png)",
   "existing_features": [
     {
       "id": "feature-implement-user-authentication-system-with-login-and-signup-functionality-using-internet-identity",
@@ -145,6 +148,166 @@
         "REQ-16"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-change-the-website-background-color-from-pistachio-mist-to-a-caramel-and-cashmere-color-scheme-throughout-the-entire-application-updating-the-color-palette-in-tailwind-configuration-css-variables-in-frontend-index-css-and-all-component-styling-that-references-the-background-color",
+      "title": "Change the website background color from Pistachio Mist to a Caramel and Cashmere color scheme throughout the entire application, updating the color palette in Tailwind configuration, CSS variables in frontend/index.css, and all component styling that references the background color",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-visual-prominence-and-clarity-of-the-login-signup-button-by-making-it-more-clearly-visible-with-enhanced-contrast-larger-size-or-more-distinctive-styling-that-stands-out-against-the-new-caramel-and-cashmere-background",
+      "title": "Increase the visual prominence and clarity of the login/signup button by making it more clearly visible with enhanced contrast, larger size, or more distinctive styling that stands out against the new Caramel and Cashmere background",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-logo-image-in-the-navigation-with-the-new-business-logo-provided-by-the-user-from-uploaded-image-whatsapp-image-2026-02-20-at-10-24-34-am-jpeg-showing-a-coffee-cup-on-an-open-book-with-kitabi-keeda-text-removing-any-placeholder-or-previous-logo-images",
+      "title": "Replace the current logo image in the navigation with the new business logo provided by the user (from uploaded image WhatsApp Image 2026-02-20 at 10.24.34 AM.jpeg showing a coffee cup on an open book with 'Kitabi Keeda' text), removing any placeholder or previous logo images",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-darken-the-caramel-and-cashmere-background-color-scheme-throughout-the-entire-application-by-adjusting-the-oklch-lightness-values-in-frontend-src-index-css-and-frontend-tailwind-config-js-to-create-a-more-visible-and-contrasting-background-that-stands-out-clearly",
+      "title": "Darken the Caramel and Cashmere background color scheme throughout the entire application by adjusting the OKLCH lightness values in frontend/src/index.css and frontend/tailwind.config.js to create a more visible and contrasting background that stands out clearly",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-significantly-increase-the-visibility-of-the-login-signup-button-by-using-a-much-darker-highly-contrasting-color-that-clearly-stands-out-against-the-new-darker-caramel-and-cashmere-background-ensuring-the-button-text-remains-readable-and-the-button-is-immediately-noticeable-in-the-navigation",
+      "title": "Significantly increase the visibility of the login/signup button by using a much darker, highly contrasting color that clearly stands out against the new darker Caramel and Cashmere background, ensuring the button text remains readable and the button is immediately noticeable in the navigation",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-company-logo-in-the-navigation-with-the-new-kitabi-keeda-logo-from-the-uploaded-images-whatsapp-image-2026-02-20-at-10-42-02-am-jpeg-and-whatsapp-image-2026-02-20-at-10-42-02-am-1-jpeg-showing-a-bookworm-on-an-open-book-with-kitabi-keeda-text-in-a-circular-design-ensuring-optimal-sizing-and-positioning-in-the-navigation-header",
+      "title": "Replace the current company logo in the navigation with the new Kitabi Keeda logo from the uploaded images (WhatsApp Image 2026-02-20 at 10.42.02 AM.jpeg and WhatsApp Image 2026-02-20 at 10.42.02 AM-1.jpeg) showing a bookworm on an open book with 'Kitabi Keeda' text in a circular design, ensuring optimal sizing and positioning in the navigation header",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-new-generated-kitabi-keeda-logo-image-as-a-static-asset-in-frontend-public-assets-generated-and-update-the-navigation-component-to-reference-this-new-logo-file-path-removing-any-references-to-the-old-logo",
+      "title": "Render the new generated Kitabi Keeda logo image as a static asset in frontend/public/assets/generated/ and update the Navigation component to reference this new logo file path, removing any references to the old logo",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-four-thriller-book-cover-images-as-static-assets-in-frontend-public-assets-generated-with-filenames-thriller-never-lie-dim-400x600-png-thriller-girl-on-train-dim-400x600-png-thriller-boyfriend-dim-400x600-png-and-thriller-silent-patient-dim-400x600-png",
+      "title": "Render the four Thriller book cover images as static assets in frontend/public/assets/generated/ with filenames thriller-never-lie.dim_400x600.png, thriller-girl-on-train.dim_400x600.png, thriller-boyfriend.dim_400x600.png, and thriller-silent-patient.dim_400x600.png",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-bookcatalog-and-samplebooks-components-to-display-the-newly-added-thriller-genre-books-with-their-cover-images-and-prices-ensuring-the-thriller-books-are-visible-on-the-catalog-page",
+      "title": "Update the BookCatalog and SampleBooks components to display the newly added Thriller genre books with their cover images and prices, ensuring the Thriller books are visible on the catalog page",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-four-romantic-book-cover-images-as-static-assets-in-frontend-public-assets-generated-with-filenames-romantic-twisted-love-dim-400x600-png-romantic-never-never-dim-400x600-png-romantic-love-hypothesis-dim-400x600-png-and-romantic-when-i-am-with-you-dim-400x600-png-using-the-uploaded-images-whatsapp-image-2026-02-20-at-10-15-24-am-1-jpeg-whatsapp-image-2026-02-20-at-10-15-24-am-jpeg-whatsapp-image-2026-02-20-at-10-15-25-am-jpeg-and-whatsapp-image-2026-02-20-at-10-15-25-am-1-jpeg-respectively",
+      "title": "Render the four Romantic book cover images as static assets in frontend/public/assets/generated/ with filenames romantic-twisted-love.dim_400x600.png, romantic-never-never.dim_400x600.png, romantic-love-hypothesis.dim_400x600.png, and romantic-when-i-am-with-you.dim_400x600.png using the uploaded images (WhatsApp Image 2026-02-20 at 10.15.24 AM (1).jpeg, WhatsApp Image 2026-02-20 at 10.15.24 AM.jpeg, WhatsApp Image 2026-02-20 at 10.15.25 AM.jpeg, and WhatsApp Image 2026-02-20 at 10.15.25 AM (1).jpeg respectively)",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-bookcatalog-and-samplebooks-components-to-display-the-newly-added-romantic-genre-books-with-their-cover-images-and-prices-ensuring-the-books-are-visible-on-the-catalog-page-and-properly-filtered-by-the-romantic-genre-preference",
+      "title": "Update the BookCatalog and SampleBooks components to display the newly added Romantic genre books with their cover images and prices, ensuring the books are visible on the catalog page and properly filtered by the Romantic genre preference",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-four-ghost-genre-book-cover-images-as-static-assets-in-frontend-public-assets-generated-with-filenames-ghost-that-night-dim-400x600-png-ghost-haunting-hill-house-dim-400x600-png-ghost-silent-hills-dim-400x600-png-and-ghost-stories-mr-james-dim-400x600-png-using-the-uploaded-images-whatsapp-image-2026-02-20-at-10-36-18-am-1-jpeg-whatsapp-image-2026-02-20-at-10-36-19-am-jpeg-whatsapp-image-2026-02-20-at-10-36-18-am-jpeg-and-whatsapp-image-2026-02-20-at-10-36-19-am-1-jpeg-respectively",
+      "title": "Render the four Ghost genre book cover images as static assets in frontend/public/assets/generated/ with filenames ghost-that-night.dim_400x600.png, ghost-haunting-hill-house.dim_400x600.png, ghost-silent-hills.dim_400x600.png, and ghost-stories-mr-james.dim_400x600.png using the uploaded images (WhatsApp Image 2026-02-20 at 10.36.18 AM (1).jpeg, WhatsApp Image 2026-02-20 at 10.36.19 AM.jpeg, WhatsApp Image 2026-02-20 at 10.36.18 AM.jpeg, and WhatsApp Image 2026-02-20 at 10.36.19 AM (1).jpeg respectively)",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-bookcatalog-and-samplebooks-components-to-display-all-books-from-all-genres-thriller-romantic-and-ghost-with-their-cover-images-and-prices-ensuring-all-books-are-visible-on-the-catalog-page-without-any-faults",
+      "title": "Update the BookCatalog and SampleBooks components to display all books from all genres (Thriller, Romantic, and Ghost) with their cover images and prices, ensuring all books are visible on the catalog page without any faults",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-investigate-and-fix-any-issues-preventing-books-from-displaying-on-the-webpage-including-checking-the-catalog-fetch-logic-image-path-references-component-rendering-and-error-handling-in-bookcatalog-and-samplebooks-components",
+      "title": "Investigate and fix any issues preventing books from displaying on the webpage, including checking the catalog fetch logic, image path references, component rendering, and error handling in BookCatalog and SampleBooks components",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-bookpreferences-component-and-genre-filter-functionality-from-the-app-tsx-eliminating-the-ability-for-users-to-filter-books-by-genre-preferences",
+      "title": "Remove the BookPreferences component and genre filter functionality from the App.tsx, eliminating the ability for users to filter books by genre preferences",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-bookcatalog-and-samplebooks-components-to-display-all-12-books-from-the-catalog-without-any-genre-filtering-ensuring-all-books-are-visible-simultaneously-on-the-webpage-with-their-cover-images-and-updated-prices",
+      "title": "Update the BookCatalog and SampleBooks components to display all 12 books from the catalog without any genre filtering, ensuring all books are visible simultaneously on the webpage with their cover images and updated prices",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-comprehensive-console-logging-to-bookcatalog-component-to-debug-why-books-are-not-displaying-including-logging-the-raw-catalog-data-from-usegetbookcatalog-the-filtered-books-array-the-coverimages-mapping-object-and-any-errors-during-rendering",
+      "title": "Add comprehensive console logging to BookCatalog component to debug why books are not displaying, including logging the raw catalog data from useGetBookCatalog, the filtered books array, the coverImages mapping object, and any errors during rendering",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-check-and-fix-the-coverimages-mapping-in-bookcatalog-component-to-ensure-all-12-book-titles-exactly-match-the-keys-in-the-mapping-object-accounting-for-any-case-sensitivity-or-whitespace-issues-and-verify-that-all-image-paths-point-to-existing-files-in-frontend-public-assets-generated",
+      "title": "Check and fix the coverImages mapping in BookCatalog component to ensure all 12 book titles exactly match the keys in the mapping object, accounting for any case sensitivity or whitespace issues, and verify that all image paths point to existing files in frontend/public/assets/generated/",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-error-boundary-or-fallback-ui-to-bookcatalog-component-that-displays-a-helpful-error-message-if-books-fail-to-load-showing-the-user-what-went-wrong-and-providing-troubleshooting-information",
+      "title": "Add error boundary or fallback UI to BookCatalog component that displays a helpful error message if books fail to load, showing the user what went wrong and providing troubleshooting information",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-samplebooks-component-is-correctly-using-the-usegetbookcatalog-hook-and-rendering-all-12-books-without-any-filters-or-limitations-mapping-book-titles-to-cover-images-and-displaying-them-in-a-grid-layout",
+      "title": "Ensure SampleBooks component is correctly using the useGetBookCatalog hook and rendering all 12 books without any filters or limitations, mapping book titles to cover images and displaying them in a grid layout",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -169,12 +332,6 @@
     {
       "id": "AR-4",
       "summary": "Make login/signup buttons more visible with deeper background color",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Add book preference selection section below search bar for genre filtering",
       "reqIds": [],
       "status": "pending"
     },
@@ -212,6 +369,106 @@
       "id": "AR-11",
       "summary": "Set business address to Kolkata, India in footer/contact section",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Change background color to Caramel and Cashmere",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Make login/signup buttons more clearly visible",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Remove logo image from business branding",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Make background color darker so Caramel and Cashmere is more visible",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Increase visibility of login/signup buttons (too light, mixing with background)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Update company logo with new image provided by user",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Display books by genre (4 books per genre) starting with Thriller genre, priced uniquely within ₹100-200 range using user-provided images",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Add four Thriller genre books to the catalog with the following details: Book 1 'Never Lie' by Freida McFadden priced at ₹125, Book 2 'The Girl on the Train' by Paula Hawkins priced at ₹150, Book 3 'The Boyfriend' by Freida McFadden priced at ₹175, and Book 4 'The Silent Patient' by Alex Michaelides priced at ₹200, using the cover images provided by the user (WhatsApp Image 2026-02-20 at 10.11.48 AM (1).jpeg, WhatsApp Image 2026-02-20 at 10.11.48 AM (2).jpeg, WhatsApp Image 2026-02-20 at 10.11.48 AM.jpeg, WhatsApp Image 2026-02-20 at 10.11.49 AM.jpeg respectively)",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Add four Romantic genre books to the catalog with prices ranging ₹100-200",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Add four Romantic genre books to the backend catalog with the following details: Book 1 'Twisted Love' by Ana Huang priced at ₹120, Book 2 'Never Never' by Colleen Hoover and Tarryn Fisher priced at ₹145, Book 3 'The Love Hypothesis' by Ali Hazelwood priced at ₹170, and Book 4 'When I Am with You' by Durjoy Datta priced at ₹195",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Add four Ghost genre books to the catalog with prices in ₹100-200 range",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Add four Ghost genre books to the backend catalog with the following details: Book 1 'That Night' by Nidhi Upadhyay priced at ₹110, Book 2 'The Haunting of Hill House' by Shirley Jackson priced at ₹135, Book 3 'Ghosts of the Silent Hills' by Anita Krishan priced at ₹160, and Book 4 'Ghost Stories' by M.R. James priced at ₹185, using the generated cover image filenames",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Remove genre filter feature and display all 12 books (Thriller, Romantic, Ghost) on webpage with prices in multiples of 10 (e.g., 110, 120, 140) between ₹100-200",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Update all 12 books in the backend catalog (4 Thriller, 4 Romantic, 4 Ghost) to have prices that are multiples of 10 between ₹100-200, ensuring variation across books: Never Lie ₹110, The Girl on the Train ₹130, The Boyfriend ₹160, The Silent Patient ₹190, Twisted Love ₹120, Never Never ₹140, The Love Hypothesis ₹170, When I Am with You ₹200, That Night ₹100, The Haunting of Hill House ₹150, Ghosts of the Silent Hills ₹180, Ghost Stories ₹110",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Verify that the backend getBookCatalog query is returning all 12 books (4 Thriller, 4 Romantic, 4 Ghost) with correct titles, authors, genres, and prices, and add backend logging if necessary to confirm data is being served",
+      "reqIds": [
+        "REQ-38"
+      ],
       "status": "pending"
     }
   ],

@@ -31,26 +31,27 @@ export default function LoginButton() {
     <Button
       onClick={handleAuth}
       disabled={disabled}
-      variant={isAuthenticated ? 'outline' : 'default'}
+      size="lg"
       className={
         isAuthenticated 
-          ? 'border-2 border-forest-green text-forest-green hover:bg-forest-green/10 font-semibold' 
-          : 'bg-forest-green hover:bg-forest-green/90 text-white font-semibold shadow-md'
+          ? 'border-2 border-warm-brown bg-cream text-warm-brown hover:bg-warm-brown hover:text-cream font-bold text-base px-6 py-3 shadow-md transition-all' 
+          : 'bg-[oklch(0.28_0.12_35)] hover:bg-[oklch(0.22_0.13_32)] text-white font-bold text-base px-6 py-3 shadow-lg hover:shadow-xl transition-all ring-2 ring-[oklch(0.28_0.12_35)]/30'
       }
+      variant={isAuthenticated ? 'outline' : 'default'}
     >
       {loginStatus === 'logging-in' ? (
         <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
           Logging in...
         </>
       ) : isAuthenticated ? (
         <>
-          <LogOut className="mr-2 h-4 w-4" />
+          <LogOut className="mr-2 h-5 w-5" />
           Logout
         </>
       ) : (
         <>
-          <LogIn className="mr-2 h-4 w-4" />
+          <LogIn className="mr-2 h-5 w-5" />
           Login / Sign Up
         </>
       )}

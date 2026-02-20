@@ -1,16 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Enhance authentication visibility, add book preferences, sample catalog, sell feature, menu system, and search capabilities.
+**Goal:** Debug and fix the book display issue preventing the 12-book catalog from rendering on the webpage.
 
 **Planned changes:**
-- Make login/signup button background color deeper and more contrasting for better visibility
-- Add book genre preferences section below the search bar with multi-select interface
-- Display 5-6 sample books on homepage with placeholder images and prices between ₹100-₹200
-- Add "Sell Your Book" feature where customers can submit books for resale
-- Create menu section in top-left corner with Settings, Personalization, and other options
-- Add camera/lens icon for image-based book search or upload
-- Implement voice search with microphone icon using browser Web Speech API
-- Update business address to Kolkata, India in footer and contact sections
+- Add comprehensive console logging to BookCatalog component to debug catalog data, filtered books, coverImages mapping, and rendering errors
+- Verify backend getBookCatalog query returns all 12 books with correct data and add backend logging if needed
+- Fix coverImages mapping to ensure all 12 book titles exactly match mapping keys and verify image paths exist
+- Add error boundary or fallback UI to display helpful error messages when books fail to load
+- Ensure SampleBooks component correctly uses useGetBookCatalog hook and renders all 12 books in grid layout
 
-**User-visible outcome:** Users can select book genres, browse sample books, submit books for selling, access settings and personalization through a menu, search by voice or image, and see a more prominent login/signup button with updated Kolkata address information.
+**User-visible outcome:** All 12 books (4 Thriller, 4 Romantic, 4 Ghost) display correctly on the webpage with cover images, titles, authors, and prices. If books fail to load, users see a clear error message explaining the issue.

@@ -19,19 +19,19 @@ export const _CaffeineStorageRefillResult = IDL.Record({
   'success' : IDL.Opt(IDL.Bool),
   'topped_up_amount' : IDL.Opt(IDL.Nat),
 });
-export const ExternalBlob = IDL.Vec(IDL.Nat8);
 export const UserRole = IDL.Variant({
   'admin' : IDL.Null,
   'user' : IDL.Null,
   'guest' : IDL.Null,
 });
+export const ExternalBlob = IDL.Vec(IDL.Nat8);
 export const Book = IDL.Record({
   'title' : IDL.Text,
   'author' : IDL.Text,
   'coverImage' : ExternalBlob,
+  'genre' : IDL.Text,
   'price' : IDL.Nat,
 });
-export const BookPreferences = IDL.Record({ 'genres' : IDL.Vec(IDL.Text) });
 export const UserProfile = IDL.Record({ 'name' : IDL.Text });
 
 export const idlService = IDL.Service({
@@ -62,38 +62,21 @@ export const idlService = IDL.Service({
     ),
   '_caffeineStorageUpdateGatewayPrincipals' : IDL.Func([], [], []),
   '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
-  'addBook' : IDL.Func(
-      [IDL.Text, IDL.Text, IDL.Text, IDL.Nat, ExternalBlob],
-      [],
-      [],
-    ),
   'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'getBookCatalog' : IDL.Func(
       [],
       [IDL.Vec(IDL.Tuple(IDL.Text, Book))],
       ['query'],
     ),
-  'getCallerBookPreferences' : IDL.Func(
-      [],
-      [IDL.Opt(BookPreferences)],
-      ['query'],
-    ),
   'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
   'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
-  'getSampleBooks' : IDL.Func([], [IDL.Vec(Book)], ['query']),
   'getUserProfile' : IDL.Func(
       [IDL.Principal],
       [IDL.Opt(UserProfile)],
       ['query'],
     ),
   'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
-  'saveCallerBookPreferences' : IDL.Func([IDL.Vec(IDL.Text)], [], []),
   'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
-  'submitSellRequest' : IDL.Func(
-      [IDL.Text, IDL.Text, IDL.Nat, ExternalBlob],
-      [],
-      [],
-    ),
 });
 
 export const idlInitArgs = [];
@@ -110,19 +93,19 @@ export const idlFactory = ({ IDL }) => {
     'success' : IDL.Opt(IDL.Bool),
     'topped_up_amount' : IDL.Opt(IDL.Nat),
   });
-  const ExternalBlob = IDL.Vec(IDL.Nat8);
   const UserRole = IDL.Variant({
     'admin' : IDL.Null,
     'user' : IDL.Null,
     'guest' : IDL.Null,
   });
+  const ExternalBlob = IDL.Vec(IDL.Nat8);
   const Book = IDL.Record({
     'title' : IDL.Text,
     'author' : IDL.Text,
     'coverImage' : ExternalBlob,
+    'genre' : IDL.Text,
     'price' : IDL.Nat,
   });
-  const BookPreferences = IDL.Record({ 'genres' : IDL.Vec(IDL.Text) });
   const UserProfile = IDL.Record({ 'name' : IDL.Text });
   
   return IDL.Service({
@@ -153,38 +136,21 @@ export const idlFactory = ({ IDL }) => {
       ),
     '_caffeineStorageUpdateGatewayPrincipals' : IDL.Func([], [], []),
     '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
-    'addBook' : IDL.Func(
-        [IDL.Text, IDL.Text, IDL.Text, IDL.Nat, ExternalBlob],
-        [],
-        [],
-      ),
     'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'getBookCatalog' : IDL.Func(
         [],
         [IDL.Vec(IDL.Tuple(IDL.Text, Book))],
         ['query'],
       ),
-    'getCallerBookPreferences' : IDL.Func(
-        [],
-        [IDL.Opt(BookPreferences)],
-        ['query'],
-      ),
     'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
     'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
-    'getSampleBooks' : IDL.Func([], [IDL.Vec(Book)], ['query']),
     'getUserProfile' : IDL.Func(
         [IDL.Principal],
         [IDL.Opt(UserProfile)],
         ['query'],
       ),
     'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
-    'saveCallerBookPreferences' : IDL.Func([IDL.Vec(IDL.Text)], [], []),
     'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
-    'submitSellRequest' : IDL.Func(
-        [IDL.Text, IDL.Text, IDL.Nat, ExternalBlob],
-        [],
-        [],
-      ),
   });
 };
 

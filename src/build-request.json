@@ -1,183 +1,114 @@
 {
   "kind": "build_request",
-  "title": "Enhance authentication visibility, add book preferences, sample catalog, sell feature, menu system, and search capabilities",
+  "title": "Debug and fix book display issue preventing catalog from rendering",
   "projectName": "Kitabi Keeda",
-  "priority": "normal",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-9",
-      "text": "Increase the visual prominence of the login/signup button by making its background color deeper and more contrasting against the Pistachio Mist theme to ensure it is clearly visible in the navigation",
+      "id": "REQ-37",
+      "text": "Add comprehensive console logging to BookCatalog component to debug why books are not displaying, including logging the raw catalog data from useGetBookCatalog, the filtered books array, the coverImages mapping object, and any errors during rendering",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-last"
         ],
         "quotes": [
-          "I can't see any visible options for logging or sign up please make that make the given colour more deeper it daily visible now"
+          "Still can't see the books. Tell me a solution. What should I do? The books should be displayed on the web page."
         ]
       },
       "acceptanceCriteria": [
-        "Login/signup button has a deeper, more saturated background color",
-        "Button remains visible and clearly distinguishable from the Pistachio Mist background",
-        "Button maintains botanical theme consistency"
+        "Console logs show the catalog data being fetched from the backend",
+        "Console logs reveal whether the books array is empty or populated",
+        "Console logs show the coverImages mapping and whether image paths are correctly resolved",
+        "Any runtime errors or missing data are logged to help identify the root cause"
       ]
     },
     {
-      "id": "REQ-10",
-      "text": "Create a book preferences section positioned below the search bar where users can select their preferred book genres through a multi-select or filter interface",
-      "target": "both",
+      "id": "REQ-38",
+      "text": "Verify that the backend getBookCatalog query is returning all 12 books (4 Thriller, 4 Romantic, 4 Ghost) with correct titles, authors, genres, and prices, and add backend logging if necessary to confirm data is being served",
+      "target": "backend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-last"
         ],
         "quotes": [
-          "below the search bar make a section where people can fill out there books preference according to genre"
+          "Still can't see the books."
         ]
       },
       "acceptanceCriteria": [
-        "Section appears directly below the search bar component",
-        "Users can select multiple genres from available options",
-        "Genre preferences are stored in user profile",
-        "UI follows botanical theme design"
+        "Backend query returns exactly 12 books",
+        "Each book has title, author, genre, and price fields populated",
+        "Books include all genres: Thriller, Romantic, and Ghost"
       ]
     },
     {
-      "id": "REQ-11",
-      "text": "Display 5-6 sample books on the front page with placeholder images (labeled 'Image to be uploaded' or showing blank placeholders) and prices ranging from ₹100 to ₹200",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "give some books yesterday for the image of the book keeping blank or or say image to be uploaded keep the pricing of the book s for around rs 100 to 200 for the basic page must be at least 5 to 6 book for the front"
-        ]
-      },
-      "acceptanceCriteria": [
-        "5-6 books are visible on the homepage",
-        "Book cards show placeholder images with 'Image to be uploaded' text or blank placeholder graphics",
-        "All sample books have prices between ₹100 and ₹200",
-        "Books display in the existing BookCatalog grid layout"
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "text": "Add a 'Sell Your Book' feature accessible from the homepage where customers can submit details about books they want to sell to Kitabi Keeda for resale",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "somewhere in the web page and option that face send your book where my customers will tell books to us that we sell further"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Visible 'Sell Your Book' button or section on the homepage",
-        "Form or modal allows customers to submit book details (title, author, condition, etc.)",
-        "Submissions are stored in the backend",
-        "Confirmation message shown after successful submission"
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Create a menu section in the top-left corner of the navigation with dropdown or sidebar options including Settings, Personalization, and other utility menu items",
+      "id": "REQ-39",
+      "text": "Check and fix the coverImages mapping in BookCatalog component to ensure all 12 book titles exactly match the keys in the mapping object, accounting for any case sensitivity or whitespace issues, and verify that all image paths point to existing files in frontend/public/assets/generated/",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-last"
         ],
         "quotes": [
-          "at the top left corner give a section for different kind of menus like setting personalization and etc"
+          "The books should be displayed on the web page."
         ]
       },
       "acceptanceCriteria": [
-        "Menu icon or button appears in the top-left corner of the navigation",
-        "Menu opens to reveal Settings and Personalization options",
-        "Menu items are clickable and navigate to respective sections",
-        "Menu design follows botanical theme"
+        "All 12 book titles from the backend catalog have matching keys in coverImages object",
+        "Image paths correctly reference files like '/assets/generated/thriller-never-lie.dim_400x600.png'",
+        "No mismatches between book titles and image mapping keys"
       ]
     },
     {
-      "id": "REQ-14",
-      "text": "Add a camera/lens icon button that allows customers to upload or capture images of books they want to search for or sell, enabling image-based book identification",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "give a image of camera or lens through which can our customers can save their books via images also"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Camera/lens icon is visible in the search or upload area",
-        "Clicking the icon opens camera access or file upload dialog",
-        "Users can capture or upload book images",
-        "Uploaded images are processed and associated with search or sell actions"
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "text": "Implement voice search functionality with a microphone icon that allows users to search for books using voice input",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "also give a mic  through which they can search by voice"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Microphone icon appears in or near the search bar",
-        "Clicking the icon activates voice input",
-        "Voice input is converted to text and populates the search field",
-        "Search executes automatically or on user confirmation"
-      ]
-    },
-    {
-      "id": "REQ-16",
-      "text": "Update the business address throughout the website to reflect Kolkata, India as the location, particularly in the footer and contact sections",
+      "id": "REQ-40",
+      "text": "Add error boundary or fallback UI to BookCatalog component that displays a helpful error message if books fail to load, showing the user what went wrong and providing troubleshooting information",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-last"
         ],
         "quotes": [
-          "for address detail use address in Kolkata India"
+          "Tell me a solution. What should I do?"
         ]
       },
       "acceptanceCriteria": [
-        "Footer displays Kolkata, India as the business address",
-        "Contact section (if present) shows Kolkata, India location",
-        "Address format is clear and properly formatted"
+        "If catalog fetch fails, a clear error message is displayed to the user",
+        "If books array is empty, a message indicates no books are available",
+        "Error UI helps identify whether the issue is with backend, frontend, or data mapping"
+      ]
+    },
+    {
+      "id": "REQ-41",
+      "text": "Ensure SampleBooks component is correctly using the useGetBookCatalog hook and rendering all 12 books without any filters or limitations, mapping book titles to cover images and displaying them in a grid layout",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "I still can't see the books."
+        ]
+      },
+      "acceptanceCriteria": [
+        "SampleBooks component renders all 12 books from the catalog",
+        "Each book displays with cover image, title, author, and price",
+        "Grid layout shows all books simultaneously without pagination or filtering"
       ]
     }
   ],
   "constraints": [
-    "Use Internet Identity for authentication, not third-party providers",
-    "Maintain the existing single-actor Motoko backend architecture",
-    "Keep all frontend components using React, Tailwind CSS, and Shadcn UI",
-    "Do not modify immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
-    "Preserve the Pistachio Mist color scheme and botanical leafy design theme",
-    "Use ₹ (Indian Rupees) for all pricing display"
+    "Do not modify the backend/main.mo actor structure beyond necessary logging additions",
+    "Do not change the existing book catalog data (12 books with specified titles, authors, genres, and prices)",
+    "Preserve the existing cover image filenames in frontend/public/assets/generated/"
   ],
   "nonGoals": [
-    "Integration with external voice recognition APIs (use browser Web Speech API)",
-    "Advanced image recognition or AI-based book identification",
-    "Real-time chat or messaging features",
-    "Third-party payment gateway integration beyond basic pricing display",
-    "Mobile app development",
-    "Email notifications for sell submissions"
+    "Redesigning the book catalog UI layout",
+    "Adding new books to the catalog",
+    "Implementing genre filtering (already removed per previous requirements)",
+    "Changing book prices or details"
   ],
   "imageRequirements": {
-    "required": [
-      "Camera or lens icon for book image upload feature (camera-icon.dim_64x64.png)",
-      "Microphone icon for voice search functionality (microphone-icon.dim_64x64.png)",
-      "Menu hamburger icon with botanical styling for top-left navigation (menu-icon.dim_48x48.png)",
-      "Placeholder book cover image with 'Image to be uploaded' text (book-placeholder.dim_300x400.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

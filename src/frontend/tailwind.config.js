@@ -66,13 +66,16 @@ export default {
                     border: 'oklch(var(--sidebar-border))',
                     ring: 'oklch(var(--sidebar-ring))'
                 },
-                'leaf-green': 'oklch(var(--leaf-green))',
-                'forest-green': 'oklch(var(--forest-green))',
-                'sage': 'oklch(var(--sage))',
-                'sage-light': 'oklch(var(--sage-light))',
+                'caramel': 'oklch(var(--caramel))',
+                'caramel-dark': 'oklch(var(--caramel-dark))',
+                'cashmere': 'oklch(var(--cashmere))',
+                'cashmere-light': 'oklch(var(--cashmere-light))',
+                'warm-brown': 'oklch(var(--warm-brown))',
+                'rich-brown': 'oklch(var(--rich-brown))',
                 'cream': 'oklch(var(--cream))',
                 'soft-beige': 'oklch(var(--soft-beige))',
-                'pistachio-mist': 'oklch(var(--pistachio-mist))'
+                'leaf-green': 'oklch(var(--leaf-green))',
+                'forest-green': 'oklch(var(--forest-green))'
             },
             borderRadius: {
                 lg: 'var(--radius)',

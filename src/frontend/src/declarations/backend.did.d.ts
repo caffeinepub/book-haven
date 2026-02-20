@@ -14,9 +14,9 @@ export interface Book {
   'title' : string,
   'author' : string,
   'coverImage' : ExternalBlob,
+  'genre' : string,
   'price' : bigint,
 }
-export interface BookPreferences { 'genres' : Array<string> }
 export type ExternalBlob = Uint8Array;
 export interface UserProfile { 'name' : string }
 export type UserRole = { 'admin' : null } |
@@ -50,24 +50,13 @@ export interface _SERVICE {
   >,
   '_caffeineStorageUpdateGatewayPrincipals' : ActorMethod<[], undefined>,
   '_initializeAccessControlWithSecret' : ActorMethod<[string], undefined>,
-  'addBook' : ActorMethod<
-    [string, string, string, bigint, ExternalBlob],
-    undefined
-  >,
   'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
   'getBookCatalog' : ActorMethod<[], Array<[string, Book]>>,
-  'getCallerBookPreferences' : ActorMethod<[], [] | [BookPreferences]>,
   'getCallerUserProfile' : ActorMethod<[], [] | [UserProfile]>,
   'getCallerUserRole' : ActorMethod<[], UserRole>,
-  'getSampleBooks' : ActorMethod<[], Array<Book>>,
   'getUserProfile' : ActorMethod<[Principal], [] | [UserProfile]>,
   'isCallerAdmin' : ActorMethod<[], boolean>,
-  'saveCallerBookPreferences' : ActorMethod<[Array<string>], undefined>,
   'saveCallerUserProfile' : ActorMethod<[UserProfile], undefined>,
-  'submitSellRequest' : ActorMethod<
-    [string, string, bigint, ExternalBlob],
-    undefined
-  >,
 }
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];

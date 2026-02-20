@@ -14,13 +14,11 @@ export class ExternalBlob {
     static fromBytes(blob: Uint8Array<ArrayBuffer>): ExternalBlob;
     withUploadProgress(onProgress: (percentage: number) => void): ExternalBlob;
 }
-export interface BookPreferences {
-    genres: Array<string>;
-}
 export interface Book {
     title: string;
     author: string;
     coverImage: ExternalBlob;
+    genre: string;
     price: bigint;
 }
 export interface UserProfile {
@@ -32,16 +30,11 @@ export enum UserRole {
     guest = "guest"
 }
 export interface backendInterface {
-    addBook(id: string, title: string, author: string, price: bigint, coverImage: ExternalBlob): Promise<void>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     getBookCatalog(): Promise<Array<[string, Book]>>;
-    getCallerBookPreferences(): Promise<BookPreferences | null>;
     getCallerUserProfile(): Promise<UserProfile | null>;
     getCallerUserRole(): Promise<UserRole>;
-    getSampleBooks(): Promise<Array<Book>>;
     getUserProfile(userId: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
-    saveCallerBookPreferences(genres: Array<string>): Promise<void>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
-    submitSellRequest(title: string, author: string, price: bigint, coverImage: ExternalBlob): Promise<void>;
 }
